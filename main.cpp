@@ -5,6 +5,11 @@ int main() {
     const int WIDTH = 800;
     const int HEIGHT = 600;
     const int MAX_ITER = 300;
+    const int PALETTE_SIZE = 5;
+
+    int red[PALETTE_SIZE]   = { 66, 25,  9,   0, 255 };
+    int green[PALETTE_SIZE] = { 30,  7,  1,   0, 255 };
+    int blue[PALETTE_SIZE]  = { 15, 26, 47, 100, 255 };
 
     std::ofstream out("mandelbrot.html");
     if (!out) {
@@ -38,7 +43,7 @@ int main() {
 
     // Color 
     out << "    let color = iter | (iter << 8);\n";
-    out << "    data[i++] = (color >> 16) & 255;\n";
+    out << "    data[i++] = " << red[0] << "/n";
     out << "    data[i++] = (color >> 8) & 255;\n";
     out << "    data[i++] = color & 255;\n";
     out << "    data[i++] = 255;\n";   // alpha
